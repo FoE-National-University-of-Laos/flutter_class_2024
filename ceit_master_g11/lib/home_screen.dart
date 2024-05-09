@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:ceit_master_g11/views/cat_list_screen.dart';
 import 'package:ceit_master_g11/views/detail_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -116,16 +117,29 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const Text(
                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nisl"),
-                      OutlinedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const DetailScreen(),
-                            ),
-                          );
-                        },
-                        child: const Text("Read more"),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          OutlinedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const DetailScreen(),
+                                ),
+                              );
+                            },
+                            child: const Text("Read more"),
+                          ),
+                          ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => CatListScreen()));
+                              },
+                              child: const Text("Cat List"))
+                        ],
                       )
                     ],
                   ),
