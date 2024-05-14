@@ -54,6 +54,48 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ],
           ),
+          Container(
+            height: 100,
+            width: 500,
+            margin: const EdgeInsets.all(32),
+            decoration: BoxDecoration(
+              color: Colors.teal,
+              borderRadius: BorderRadius.circular(38),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 25,
+                  spreadRadius: 5,
+                  offset: Offset(0, 3),
+                )
+              ],
+            ),
+            child: const Center(
+              child: Text(
+                'Hello World',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          const Icon(
+            Icons.airplane_ticket,
+            size: 100,
+            color: Colors.teal,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              TextButton(onPressed: () {}, child: Text("Cancel")),
+              ElevatedButton(onPressed: () {}, child: Text("Accept")),
+              OutlinedButton(onPressed: () {}, child: Text("Outlined")),
+              IconButton(onPressed: () {}, icon: Icon(Icons.add))
+            ],
+          ),
+          Image.network("https://picsum.photos/250?image=9"),
         ],
       ),
     );
