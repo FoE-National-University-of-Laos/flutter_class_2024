@@ -51,6 +51,41 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ],
           ),
+          Container(
+            width: 500,
+            height: 150,
+            margin: const EdgeInsets.all(32),
+            decoration: BoxDecoration(
+                color: Colors.deepPurple,
+                borderRadius: BorderRadius.circular(32),
+                boxShadow: const [
+                  BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(4, 4),
+                      blurRadius: 10,
+                      spreadRadius: 3)
+                ]),
+            child: const Center(
+                child: Text(
+              "Hello world",
+              style: TextStyle(
+                fontSize: 32,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            )),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              TextButton(onPressed: () {}, child: Text("Cancel")),
+              ElevatedButton(onPressed: () {}, child: Text("OK")),
+              OutlinedButton(onPressed: () {}, child: Text("Submit")),
+              IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+            ],
+          ),
+          Image.network("https://picsum.photos/250?image=10"),
+          const Icon(Icons.build_circle, size: 50, color: Colors.teal),
         ],
       ),
     );

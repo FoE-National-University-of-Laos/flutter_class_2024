@@ -5,6 +5,9 @@ import 'package:ceit_master_g11/views/detail_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'views/future_builder_api.dart';
+import 'views/future_builder_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -139,6 +142,34 @@ class _HomeScreenState extends State<HomeScreen> {
                                         builder: (context) => CatListScreen()));
                               },
                               child: const Text("Cat List"))
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const FutureBuilderScreen(),
+                                ),
+                              );
+                            },
+                            child: const Text("FutureBuilder"),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const FutureBuilderForAPIScreen(),
+                                ),
+                              );
+                            },
+                            child: const Text("FutureBuilder API"),
+                          ),
                         ],
                       )
                     ],
