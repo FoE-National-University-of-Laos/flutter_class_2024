@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'views/future_builder_api.dart';
 import 'views/future_builder_screen.dart';
+import 'views/stream_builder_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -170,6 +171,22 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                             child: const Text("FutureBuilder API"),
                           ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const StreamBuilderScreen(),
+                                ),
+                              );
+                            },
+                            child: const Text("StreamBuilder"),
+                          )
                         ],
                       )
                     ],

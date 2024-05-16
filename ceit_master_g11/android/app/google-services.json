@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "727183957684",
+    "project_id": "master-flutter-g11",
+    "storage_bucket": "master-flutter-g11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727183957684:android:fad817faf045037cf981e1",
+        "android_client_info": {
+          "package_name": "com.example.ceit_master_g11"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDXfHxjDl7Ot8Z6NHaO9DgPJ_yo5XsJoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

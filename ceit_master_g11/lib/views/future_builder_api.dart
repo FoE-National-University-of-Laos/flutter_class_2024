@@ -52,7 +52,7 @@ class _FutureBuilderForAPIScreenState extends State<FutureBuilderForAPIScreen> {
                             children: [
                               Text(
                                   "Life Exp - Min:${cat.minLifeExpectancy} - Max:${cat.maxLifeExpectancy} "),
-                              SizedBox(height: 4),
+                              const SizedBox(height: 4),
                               Text(
                                   "Weight - Min:${cat.minWeight} - Max:${cat.maxWeight}"),
                             ],
