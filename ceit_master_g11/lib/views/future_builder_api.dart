@@ -32,46 +32,52 @@ class _FutureBuilderForAPIScreenState extends State<FutureBuilderForAPIScreen> {
         title: const Text("Future Builder Screen"),
       ),
       body: Center(
-        child: FutureBuilder<List<CatModel>>(
-            future: getData(),
-            builder: (context, AsyncSnapshot snapshot) {
-              return snapshot.hasData
-                  ? ListView.builder(
-                      itemCount: snapshot.data.length,
-                      itemBuilder: (context, index) {
-                        CatModel cat = snapshot.data[index];
-                        return ListTile(
-                          leading: CircleAvatar(
-                            backgroundImage: NetworkImage(cat.imageLink),
-                            radius: 25,
-                          ),
-                          title: Text(cat.name),
-                          subtitle: Text(cat.origin),
-                          trailing: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                  "Life Exp - Min:${cat.minLifeExpectancy} - Max:${cat.maxLifeExpectancy} "),
-                              const SizedBox(height: 4),
-                              Text(
-                                  "Weight - Min:${cat.minWeight} - Max:${cat.maxWeight}"),
-                            ],
-                          ),
-                        );
-                      },
-                    )
-                  : LottieBuilder.asset(
-                      "assets/loadingindicator.json",
-                      width: 358,
-                    );
-              // if (snapshot.hasData) {
-              //   return Text("Data from function is: ${snapshot.data}");
-              // } else if (snapshot.hasError) {
-              //   return Text("${snapshot.error}");
-              // } else {
-              //   return const CircularProgressIndicator();
-              // }
-            }),
+        child: RefreshIndicator(
+          onRefresh: () async {
+            getData();
+            setState(() {});
+          },
+          child: FutureBuilder<List<CatModel>>(
+              future: getData(),
+              builder: (context, AsyncSnapshot snapshot) {
+                return snapshot.hasData
+                    ? ListView.builder(
+                        itemCount: snapshot.data.length,
+                        itemBuilder: (context, index) {
+                          CatModel cat = snapshot.data[index];
+                          return ListTile(
+                            leading: CircleAvatar(
+                              backgroundImage: NetworkImage(cat.imageLink),
+                              radius: 25,
+                            ),
+                            title: Text(cat.name),
+                            subtitle: Text(cat.origin),
+                            trailing: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                    "Life Exp - Min:${cat.minLifeExpectancy} - Max:${cat.maxLifeExpectancy} "),
+                                const SizedBox(height: 4),
+                                Text(
+                                    "Weight - Min:${cat.minWeight} - Max:${cat.maxWeight}"),
+                              ],
+                            ),
+                          );
+                        },
+                      )
+                    : LottieBuilder.asset(
+                        "assets/loadingindicator.json",
+                        width: 358,
+                      );
+                // if (snapshot.hasData) {
+                //   return Text("Data from function is: ${snapshot.data}");
+                // } else if (snapshot.hasError) {
+                //   return Text("${snapshot.error}");
+                // } else {
+                //   return const CircularProgressIndicator();
+                // }
+              }),
+        ),
       ),
     );
   }

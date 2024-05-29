@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:ceit_master_g11/views/cat_list_screen.dart';
 import 'package:ceit_master_g11/views/detail_screen.dart';
+import 'package:ceit_master_g11/views/form_examples.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -186,6 +187,18 @@ class _HomeScreenState extends State<HomeScreen> {
                               );
                             },
                             child: const Text("StreamBuilder"),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const FormExampleScreen(
+                                      name: "Master G11"),
+                                ),
+                              );
+                            },
+                            child: const Text("Form Example"),
                           )
                         ],
                       )
