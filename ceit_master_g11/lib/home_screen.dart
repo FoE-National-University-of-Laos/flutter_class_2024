@@ -1,10 +1,13 @@
 import 'dart:io';
 
+import 'package:ceit_master_g11/providers/count_provider.dart';
 import 'package:ceit_master_g11/views/cat_list_screen.dart';
 import 'package:ceit_master_g11/views/detail_screen.dart';
 import 'package:ceit_master_g11/views/form_examples.dart';
+import 'package:ceit_master_g11/views/provider_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'views/future_builder_api.dart';
 import 'views/future_builder_screen.dart';
@@ -197,9 +200,44 @@ class _HomeScreenState extends State<HomeScreen> {
                                       name: "Master G11"),
                                 ),
                               );
+                              // Get.to(FormExampleScreen());
                             },
                             child: const Text("Form Example"),
-                          )
+                          ),
+                        ],
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProviderScreen(),
+                            ),
+                          );
+                          // Get.to(FormExampleScreen());
+                        },
+                        child: const Text("Provider Example"),
+                      ),
+                      Consumer<CountProvider>(
+                        builder: (context, data, child) => Text(
+                          'Count: ${data.counter}',
+                          style: const TextStyle(fontSize: 24),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              context.read<CountProvider>().decrement();
+                            },
+                            child: Text("-"),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              context.read<CountProvider>().increment();
+                            },
+                            child: Text("+"),
+                          ),
                         ],
                       )
                     ],

@@ -1,3 +1,4 @@
+import 'package:ceit_4com3/views/detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -70,7 +71,14 @@ class _MainScreenState extends State<MainScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 TextButton(onPressed: () {}, child: Text("Cancel")),
-                ElevatedButton(onPressed: () {}, child: Text("Accept")),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailScreen()));
+                    },
+                    child: Text("Accept")),
                 OutlinedButton(onPressed: () {}, child: Text("OK")),
                 IconButton(
                   onPressed: () {},
