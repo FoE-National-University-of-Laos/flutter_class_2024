@@ -79,6 +79,7 @@ class _MainScreenState extends State<MainScreen> {
                   'Hello World',
                   style: TextStyle(
                     color: Colors.white,
+                    fontFamily: 'Arial',
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
