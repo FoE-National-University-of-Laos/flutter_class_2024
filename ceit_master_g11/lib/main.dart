@@ -1,3 +1,4 @@
+import 'package:ceit_master_g11/auth_screen.dart';
 import 'package:ceit_master_g11/firebase_options.dart';
 import 'package:ceit_master_g11/home_screen.dart';
 import 'package:ceit_master_g11/providers/count_provider.dart';
@@ -10,6 +11,7 @@ import 'providers/animal_provider.dart';
 
 void main() async {
   runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
       home: MultiProvider(providers: [
         ChangeNotifierProvider(create: (_) => AnimalProvider()),
         ChangeNotifierProvider(create: (_) => CountProvider(counter: 0)),
-      ], child: HomeScreen()),
+      ], child: AuthScreen()),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:ceit_2com_c2/views/image_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'views/detail_screen.dart';
@@ -82,7 +83,16 @@ class _MainScreenState extends State<MainScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TextButton(onPressed: () {}, child: Text("Cancel")),
-                ElevatedButton(onPressed: () {}, child: Text("OK")),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ImageScreen(),
+                        ),
+                      );
+                    },
+                    child: Text("OK")),
                 OutlinedButton(
                     onPressed: () {
                       Navigator.push(

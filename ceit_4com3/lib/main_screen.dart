@@ -1,4 +1,5 @@
 import 'package:ceit_4com3/views/detail_screen.dart';
+import 'package:ceit_4com3/views/image_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -78,8 +79,18 @@ class _MainScreenState extends State<MainScreen> {
                           MaterialPageRoute(
                               builder: (context) => DetailScreen()));
                     },
-                    child: Text("Accept")),
-                OutlinedButton(onPressed: () {}, child: Text("OK")),
+                    child: Text(
+                      "Accept",
+                      style: TextStyle(fontFamily: "Arial"),
+                    )),
+                OutlinedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ImageScreen()));
+                    },
+                    child: Text("OK")),
                 IconButton(
                   onPressed: () {},
                   icon: Icon(Icons.arrow_forward_ios),

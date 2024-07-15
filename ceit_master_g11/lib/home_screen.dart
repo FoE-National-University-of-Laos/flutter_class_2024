@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:ceit_master_g11/providers/count_provider.dart';
+import 'package:ceit_master_g11/services/auth_service.dart';
 import 'package:ceit_master_g11/views/cat_list_screen.dart';
 import 'package:ceit_master_g11/views/detail_screen.dart';
 import 'package:ceit_master_g11/views/form_examples.dart';
@@ -14,7 +15,8 @@ import 'views/future_builder_screen.dart';
 import 'views/stream_builder_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, required this.auth});
+  final AuthService auth;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -118,8 +120,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.all(24),
                   child: Column(
                     children: [
-                      const Text(
-                        "This is a simple text",
+                      Text(
+                        widget.auth.currecUser != null
+                            ? "Hello ${widget.auth.currecUser!.displayName}"
+                            : "Hello!",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 24),
                       ),
